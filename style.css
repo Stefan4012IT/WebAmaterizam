@@ -10,6 +10,7 @@
 }
 
 html, body {
+    height: 100%;
     background-color: #fff;
     color: #555;
     font-family: 'Lora', serif;
@@ -20,8 +21,20 @@ html, body {
     font-size: 20px;
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 
+body::-webkit-scrollbar {
+    width: 8px;
+    background-color: #4245ff66;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: #000552;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #000552;
+}
 
 /* ------------------------------------------------------------------------------------------------------ */
 /* HEADER                                                                                                 */
@@ -29,10 +42,9 @@ html, body {
 
 header {
     position: relative;
-    background-image: linear-gradient(hsl(236, 100%, 16%), rgba(66, 69, 255, 0.4)),url(img/ivan-aleksic-WrYM0tBbYj0-unsplash.jpg);
+    background-image: linear-gradient(rgb(0, 5, 82), rgba(66, 69, 255, 0.4)),url(img/ivan-aleksic-WrYM0tBbYj0-unsplash.jpg);
     height: 100vh;
     width: 100vw;
-    display: block;
     background-size: cover;
     background-position: bottom;
 }
@@ -61,7 +73,7 @@ header {
     text-transform: uppercase;
     border: solid 5px;
     padding: 10px;
-    text-shadow: 1px 1px rgb(91, 207, 126);
+    text-shadow: 1px 1px #5bcf7e;
     box-shadow: 2px 2px 50px 2px #555;
     background-color: rgb(112, 122, 215, .1);
     /*opacity: .9;*/
@@ -98,6 +110,13 @@ header {
     background-size: cover;
 }
 
+
+.mucho {
+    position: relative;
+    height: 80vh;
+    width: 100%;
+    background-color: #5bcf7e;
+}
 
 
 
@@ -137,4 +156,26 @@ header {
     100% {
         transform: translateY(0%); 
     } 
+  }
+
+  @keyframes firstDisappear{
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+          transform: translateY(-100%);
+          display: none;
+          visibility: hidden;
+      }
+  }
+
+  @keyframes secondDisappear{
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+          transform: translateY(100%);
+          display: none;
+          visibility: hidden;
+      }
   }

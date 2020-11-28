@@ -1,6 +1,6 @@
 //KREIRANJE NAME HTML ELEMENTS OF CLASSES
 
-function createColumnsName(){
+function createColumnsName() {
     var segmentsName = [];
     var secondSegmentsName = [];
 
@@ -17,7 +17,7 @@ function createColumnsName(){
 //CREATE ATTRIBUTS IN HTML CLASS
     //number of columns as first of all declared in CSS file as Classes of HTML element which need to split as value of attribute grid-template-columns
 
-function createColumnsInHTML(numOfColumns){
+function createColumnsInHTML(numOfColumns) {
     for(let i=1; i<=numOfColumns; i++) {
         document.getElementById("firstHalf").insertAdjacentHTML("beforeend", `<div class="first-col-${i}"></div>`);
         document.getElementById("secondHalf").insertAdjacentHTML("beforeend", `<div class="second-col-${i}"></div>`);
@@ -29,7 +29,7 @@ createColumnsInHTML(20);
 
 //SELECT ALL ATTRIBUTES OF THE CLASS AND MAKING PROPRIET GRID-COLUMN STYLE VALUES
 
-function selectSegments(numOfColumns){
+function selectSegments(numOfColumns) {
     const segments = [];
     const secondSegments = [];
 
@@ -71,4 +71,31 @@ function animationLoop() {
 
 animationLoop();
 
+//DOM
+const firstHalf = document.querySelector('.firstHalf');
+const secondHalf = document.querySelector('.secondHalf');
+const header = document.getElementById('header');
+const bodyElem = document.getElementsByTagName('body')[0];
+const mucho = document.querySelector('.mucho');
 
+
+function stopRemove() {
+    firstHalf.style.animation = 'firstDisappear 1.5s forwards';
+    secondHalf.style.animation = 'secondDisappear 1.5s forwards';
+    bodyElem.style.overflowY = "visible";
+    setTimeout(() => {
+        firstHalf.remove();
+        secondHalf.remove();
+        
+    }, 1200);
+    
+        
+}
+
+
+
+header.addEventListener('click', () => {
+    stopRemove();
+    /**/
+    bodyElem.style.color = "#000";
+});
